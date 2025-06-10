@@ -1,0 +1,53 @@
+<div class="px-40 mt- justify-center items-center flex flex-col">
+  @if (isEdit) {
+
+    <h1 class="text-2xl mt-4 mb-2">Update Brand</h1>
+
+  }
+
+  @else {
+
+    <h1 class="text-2xl mt-4 mb-2">Add Brand</h1>
+
+  }
+  <!-- <h1 class="text-2xl mt-4 mb-2">Add Brand</h1> -->
+
+
+  <div  class="w-96 shadow "  >
+    <form>
+
+      <div class="flex flex-wrap">
+
+
+        <mat-form-field class ="w-full">
+
+          <mat-label>Name</mat-label>
+          <!-- <input matInput type="text" name="name" /> -->
+
+          <!-- <input matInput type="text" placeholder="Enter Brand Name" name="name" required /> -->
+          <input matInput type="text" [(ngModel)]="name" name="name">
+        </mat-form-field>
+
+
+      </div>
+
+      <div class="flex justify-center">
+
+        <!-- <button mat-raised-button color="primary" (click)="add()" [disabled]="!name" >Add</button> -->
+          @if(isEdit){
+
+     <button mat-raised-button color="primary" [disabled]="!name" (click)="update()">Update</button>
+  }
+
+  @else { <button mat-raised-button color="primary" [disabled]="!name" (click)="add()">Add</button>}
+
+      </div>
+
+
+
+    </form>
+
+
+  </div>
+
+</div>
